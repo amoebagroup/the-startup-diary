@@ -1,0 +1,30 @@
+New Antipattern : Server side template rendering. 
+
+You don’t need to worry if
+
+Server side rendering is okay, infact more suitable sometimes, like
+creating a webapp quickly (mainly because all frameworks encourage it ).
+if only one dev ever works on the codebase, its hasleless(again due to lack of tools). 
+blogging websites with a server .
+
+Strictly avoid it when
+
+if you will ever build an android/ios client.
+if it needs complex server side logic (because you will write tests).
+if you will ever have a specialist ui guy, and want him to be able to fix tests, commit, and deploy independently.
+If you tweak your user experience mercilessly.
+
+Why do I dislike it ?
+
+lots of rework, for a mobile client.
+Constrained user experience.
+Extra load on precious production server for rendering template (io, memory, processing).
+Redundant network calls(all the templates you mix at server side, were already at client side)
+Limited caching options.
+server codebase littered with client rendering logic.
+frontend guys are dependent on backend guys for adding features, fixing tests, deploying new features, resolving merge conflicts. 
+any slight change in ui (say a label color), makes all server side tests/deployments run.
+ui cannot be updated, without a redeploy.
+
+
+
