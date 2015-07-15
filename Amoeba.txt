@@ -1,0 +1,11 @@
+Heading (in bold/bigger font size/different color/etc.):
+The Amoeba Collective: ever-evolving, defying "structure"
+
+Content (in normal font):
+You have probably heard that organizations that have well-defined structures are the ones that thrive. We are here to prove that wrong. You might have seen people say "Well, if you worked only on C# so far, your experience doesn’t count for the Python project that we are hiring for." We won’t rest till we change that mentality. If you hate the kind of people who think you are not working simply because you are staring at your screen and sipping coffee, you will love us.
+
+There are 6 of us right now, and we are all serious about coding. We are here to build a community that creates good software, safeguards the interests of programmers, and makes sure that programming is treated as the creative pursuit that it is. Existing corporate structures do not allow the flexibility that different kinds of programmers require to enhance their creativity in problem-solving/coding. That is why you see so many people wanting to freelance and even start-up on their own.
+
+There is nothing wrong in working with a big team, but most of the time, there is a void between what the managers think programming is and how programmers like to work. This void often leads to a situation where managers do not know how to take care of programmers so that they create good software. That's kind of my motivation behind The Amoeba Collective. Look at it as a community where you can engage with good software craftsmen, help a learner begin by mentoring on a real project, find colleagues to teamup with, and, most importantly, learn, practice, teach, and preach software development as an art rather than labor.
+
+The day programming is looked upon as a creative profession, the work of our community will be successful!
