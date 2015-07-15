@@ -1,11 +1,14 @@
 This is the request it sends to render next set of posts (on scroll or auto update).
 
+--------------------------------------------------------------------------------------------
 Remote Address:199.16.158.168
 URL:https://twitter.com/i/timeline?params
 params : composed_count=0&include_available_features=1&include_entities=1&include_new_items_bar=true&interval=10000&last_note_ts=1436954424&latent_count=0&min_position=621323345422872576
 Request Method:GET
+--------------------------------------------------------------------------------------------
 
 
+about request :
 a. session info in cookies
 b. its an ajax request
 c. tells to send update since last updated time, with various other params.
@@ -13,6 +16,7 @@ d. appends it to the timeline.
 
 great, now lets look into a sample response :
 
+--------------------------------------------------------------------------------------------
 {
   "inner": {
     "max_position": "621314247671324672",
@@ -49,6 +53,7 @@ great, now lets look into a sample response :
     }
   }
 }
+--------------------------------------------------------------------------------------------
 
 
 Did you notice ? they have html in their json content.
