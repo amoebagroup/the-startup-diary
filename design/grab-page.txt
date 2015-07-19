@@ -1,0 +1,6 @@
+-- create room for experimentation, 
+-- use of improving a remote website.
+-- replace "." with target
+-- replcae canvs.in with page you want to grab.
+
+ wget -P . -mpck --user-agent="" -e robots=off --wait 1 -E http://canvs.in
