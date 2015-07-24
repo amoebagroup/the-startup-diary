@@ -27,4 +27,7 @@ any slight change in ui (say a label color), makes all server side tests/deploym
 ui cannot be updated, without a redeploy.
 
 
-
+Security ?
+- authenticating user via ajax calls can be unsafe(middleman attacks), unless used with "ssl + jsonp".
+- alternatively : seggregate ui in different repo, checkout to integrate, 
+  use app server to serve pages, and auth(unbuilt)
