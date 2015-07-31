@@ -1,5 +1,3 @@
-to do : 
---------------------------------------------------------------------------
 Single page apps 
 ================
 
@@ -114,12 +112,58 @@ Hands-on
  }
  ????? -> when is the app actually created ? 
   
-2. Create a home page(#/)
-  - sub-route is the part after the "#", 
-  - each sub-route represents a page in app
-  - we add new page by adding a config for the page, and declaring an angular controller to use with it.
-  - we add 
+2. Create a home page
+  - homepage will be like :
+  	> router 	: "/#"
+  	> htmleTemplate	: "pages/home/template.html"
+  	> controller   	: "pages/home/controller.js"
+  
+  - steps to add the route : 
+  	// a. we will add a config  to our app
 
+  	var addHomeRoute = function($stateProvider){
+  		// add new state(page) to stateProviderService
+  	};
+
+   	app.config(
+   		['$stateProvider'], 
+   		addHomeRoute
+   	);
+
+	- a.how congig works 
+   	app.config = function( depndencyArray, callback) {
+		// find all depndencies
+   		// callback(depndency1, depndency2, ..)
+   	}
+   	//for example we could inject "$stateProvider and $urlProvider"
+   	// $urlProvider is used to create redirects(YAGNI)
+
+   	- b. how to register a state 
+
+
+   	- about $stateProvider
+   	 > defined by ui-router (ui.router.state.$stateProvider)
+   	 > has a state method: 
+   	 	$stateProvider.state = function(uniqueName, stateConfig){
+   	 		// register state with (route, template, controller)
+   	 	}
+   	 > allows nesting of states(nested pages, redirects, before, after page load actions), 
+   	 > dont worry, YAGNI
+
+   	var addHomeRoute = function($stateProvider){
+  		$stateProvider.state( 
+  		  "home",{
+			url 		: "", 							// part after '#', hence empty
+    			templateUrl	: "pages/home/template.html",
+    			controllers	: "pages/home/controller.js"
+  		   }
+  		);
+  	};
+ 
+ 
+ 3. 
+to do : 
+--------------------------------------------------------------------------
      
 3.display a list of items on home page
 4. create another view to edit it.
@@ -128,19 +172,9 @@ Hands-on
 -  How to register
    angular app can be configured like : 
 
-   	//assumption
-   app.config = function( depndencyArray, callback) {
-   	// find all depndencies
-   	// callback(depndency1, depndency2, ..)
-   }
 
 
-   app.config(
-   		['$stateProvider'], 
-   		function(stateProvider){
-   			// add new state
-   		}
-   );
+
 
      myapp.config([
     '$stateProvider', function ($stateProvider) {
