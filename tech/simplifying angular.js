@@ -1,6 +1,8 @@
 to do : 
+--------------------------------------------------------------------------
+Single page apps 
+================
 
-Single page apps : 
 a url in a sinlge page app looks something like this 
 - "http://angular-ui.github.io/ui-router/sample/#/contacts"
 
@@ -22,7 +24,7 @@ A Deeper Look
  e.g         
  - "#/<route>" 	: locaiton hash represents which page to show
  - "#/"  		: usually represents home state [home/default view of app]
- 
+
   Importance of location hash in a single page app
    -> location.hash is the part after "#" in current url (e.g. http://angular-ui.github.io/ui-router/sample/#/contacts)
      - it allows navigation to pages, within a sigle page app.
@@ -30,10 +32,72 @@ A Deeper Look
      - browsing context encapsulates dom, js libraries, js objects in memory.
      - when page reloaded, browsing context is lost
      - with browsing context, we loose : dom, js libs, js objects in memory
+
+Cross-origin-requests : CORS - cross origin resource sharing
+- an ajax request to server at different location origin, than the page.
+- such resoureces cant be accessed, unless specified explicitly
+- allowed using "Access-Control-Allow-Origin" value in response header
+- if it doesnt include our current location origin, browser doesnt allow access to it.
+
 --------------------------------------------------------------------------
+Single page app with angularjs and ui-router
+================
+Why angularjs : 
+- and extension to browser, helpful in creating single page apps.
+- its templates, directives, controller provides proverful way to generate html, manipulate dom, bind js logic and data to pages, 
+- angularjs is not designed as a SinglePageApp framework 
+- instead like am extension to browser.
+- we design our singe-page-app on top of angular and ui-router.
+
+- directives : 
+	> hooks js code to html dom (controllers, app, validations logic etc.)
+	> also provides a context to easily read/write on document pages ($scope and angular digest cycles)
+	> create custom to manipulate dom, custom ui elements and element behaviours.
+
+- services : 
+    > allow sharing functionalities, throughout the app
+    > some inbuilt services (always start with "$" sign) 
+    	- $location for urls, 
+    	- for async angular operations $timeout (digest cycles suck!)
+    	- $http for ajax requests 
+    > create custom to share common features across pages
+    	- like get/update data from [server/cookie/storage/url].
+	
+- controllers : 
+	> glues application logic to html templates. 
+		- what data to show on page, 
+		- what to do on user actions
+	> interacts with services to get data to display and modify it on user action.
+
+- filters     : 
+	> for formatting logic shared across the pages
+	> use like presenters/controller-helper
+	> for logic like 
+		- change to upper case,
+		- round off a number
+
+- templates :
+	> for automatically rendering objects in memory, on html
+	> awesome synchronization between in-memory objects and html page
+	> angular digest cyclces ensure, every change in memory is reflected on html and vice versa.
 
 
-1. create an agular app
+Why ui router :  
+- we design our app, as collection of pages.
+- ui-router allows modeling the app, as a state-machine 
+- each page is a state, and has 
+	> a  route, 
+	> an html template, 
+	> a  controller.	
+- navigating between pages means transition between states.
+- easily 
+	> change pages on url change (on loaction hash change).
+	> do things before, after loading pages (e.g. clear search, warning messages, change tab)
+
+--------------------------------------------------------------------------
+Hands-on
+========
+1. create an angular app
  - every app is just another module.
  - every module has 
      > name,
@@ -48,6 +112,7 @@ A Deeper Look
  	// create module with name newModuleName
  	// return new module
  }
+ ????? -> when is the app actually created ? 
   
 2. Create a home page(#/)
   - sub-route is the part after the "#", 
