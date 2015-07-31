@@ -5,6 +5,17 @@ to do :
  - every module has 
      > name,
      > list of depending modules
+     
+ - code  : 
+  var myApp = angular.module("app", []); // module-name: "app", dependencies: none
+  
+ - how it works 
+ angular.module = function(newModuleName, dependenciesArray){
+ 	// for all names in dependenciesArray, load modules, if not found  ?????
+ 	// create module with name newModuleName
+ 	// return new module
+ }
+  
 
 2. create a home page(#/)
   - sub route is the part after the "#", 
@@ -25,17 +36,7 @@ to do :
 
 
 --> googling tip : remove search result older than a year, always !!!
-1. create app, by registering a new module : 
-	window.myApp = angular.module("app", ['ui.router'])
 
-	app = angular.module("myfirstapp", [])
-
-	//assumption
-	angular.module = function(name, moduleNamesArray){
-		// find all dependencies, in moduleNamesArray, if not found ????
-		// create app 
-		// return app
-	}
 
 2. create home route ("/")
    register routes in app config
