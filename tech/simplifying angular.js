@@ -16,7 +16,7 @@ A Deeper Look
  - app launches when on entering (origin + pathname) in address bar.
  - when (origin + pathname) changes, app is closed.
  - location hash decides which page to render
- - on launch, app looks [cookie/location-hash/local-storage], and decides what to render next
+ //[remove]- on launch, app looks [cookie/location-hash/local-storage], and decides what to render next
  - e.g. if session-id is missing in cookie, redirects to login page.
         or open a particular page for the user.
         or shows progress bar unless it downloads and add some data to local storage.
