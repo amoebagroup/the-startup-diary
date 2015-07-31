@@ -16,13 +16,13 @@ A Deeper Look
  - app launches when on entering (origin + pathname) in address bar.
  - when (origin + pathname) changes, app is closed.
  - location hash decides which page to render
- //[remove]- on launch, app looks [cookie/location-hash/local-storage], and decides what to render next
- - e.g. if session-id is missing in cookie, redirects to login page.
-        or open a particular page for the user.
-        or shows progress bar unless it downloads and add some data to local storage.
+ // [REMOVE]- on launch, app looks [cookie/location-hash/local-storage], and decides what to render next
+ // - e.g. if session-id is missing in cookie, redirects to login page.
+ //        or open a particular page for the user.
+ //        or shows progress bar unless it downloads and add some data to local storage.
 
  e.g         
- - "#/<route>" 	: locaiton hash represents which page to show
+ - "#/<route>" 	: location hash represents which page to show
  - "#/"  		: usually represents home state [home/default view of app]
 
   Importance of location hash in a single page app
