@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyFirstApp</title>
+    <meta name="keywords" content="javascript, angularjs, jquery, html5, css3, template"/>
+    <meta name="description" content="A sample angularjs app."/>
+
+    <meta charset="utf-8">
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+</head>
+<script>
+    var app = angular.module("myfirstapp", ['ui.router']);
+    app.config(["$stateProvider", function($stateProvider){
+        $stateProvider.state(
+                "home",{
+                    url: "", //empty for homepage
+                    template: "aaa gale lag ja...<ul ng-repeat='item in items'><li>{{item.name}}, {{item.id}}</li></ul>",
+                    controller: "HomeController"
+                }
+        );
+    }]);
+
+    app.controller("HomeController", ["$scope", function($scope){
+        $scope.items = [{name: 'one', id: 1}, {name: 'two', id: 2}, {name: 'three', id: 3}];
+    }]);
+</script>
+
+<body ng-app="myfirstapp">
+<p>My first app</p>
+
+<div ui-view></div>
+
+</body>
+
+
+</html>
